@@ -39,6 +39,32 @@ class CategorieRepository extends ServiceEntityRepository
         }
     }
 
+
+    public function findParent()
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.parentCategorie = :val')
+            ->setParameter('val', null)
+            ->getQuery()
+            ->getOneOrNullResult()
+         ;
+ }
+ 
+//  public function findall()
+//  {
+//      return $this->createQueryBuilder('p')
+//          ->andWhere('p.produit = :val')
+//          ->setParameter('val', null)
+//          ->getQuery()
+//          ->getOneOrNullResult()
+//       ;
+// }
+
+
+
+ }
+
+
 //    /**
 //     * @return Categorie[] Returns an array of Categorie objects
 //     */
@@ -63,4 +89,5 @@ class CategorieRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
-}
+
+
