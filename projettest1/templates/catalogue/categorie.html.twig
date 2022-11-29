@@ -9,7 +9,7 @@
                 {% for categorie in categories %}
                 {% if categorie.parentCategorie == null %}
                     <div class="col-4">
-                    <a href="{{path('app_souscategorie', {'categorie' : categorie.id }) }}">
+                    <a href="{{path('app_souscategorie', {categorie : categorie.id }) }}">
                         <img class="img-fluid" src="https://picsum.photos/300/200" >
                         <div class="text-center">
                         {{ categorie.name}}

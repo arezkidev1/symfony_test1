@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Produit
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="row">
+			{% for produit in produits %}
+				{# <div>
+							{{produit.name}}
+							{{produit.description}}
+							{{produit.prix}}
+				
+							<div class="col-4">
+								<a href="{{path('app_produit', {categorie : produit.id }) }}">
+									<img class="img-fluid" src="https://picsum.photos/300/200">
+									<div class="text-center">
+										{{ produit.name }}
+									</div>
+								</a>
+							</div>  
+				
+				                <div class="card-deck col-12 col-sm-6 col-md-4 col-lg-3 " >
+				                    <img src="https://picsum.photos/300/200" class="card-img-top" alt="...">
+				                    <div class="card-body">
+				                        <h5 class="card-title">{{produit.name}}</h5>
+				                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				                    </div>
+				                    <ul class="list-group list-group-flush">
+				                        <li class="list-group-item">{{produit.description}}</li>
+				                        <li class="list-group-item">{{produit.prix|format_currency('EUR', locale='fr' )}}</li>
+				                    </ul>
+				                    <div class="card-body">
+				                        <a href="#" class="card-link">Card link</a>
+				                        <a href="#" class="card-link">Another link</a>
+				                    </div>
+				                </div>  #}
+
+				<div>
+					{{produit.name}}
+					{{produit.description}}
+					{{produit.prix}}
+				</div>
+
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}
