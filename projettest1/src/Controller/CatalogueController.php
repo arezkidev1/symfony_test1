@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Produit;
+use App\Entity\Categorie;
 use App\Repository\ProduitRepository;
 use App\Repository\CategorieRepository;
-use App\Entity\Categorie;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -38,6 +39,13 @@ class CatalogueController extends AbstractController
         ]);
     }
 
+    #[Route('/produitDetail/{produit}', name: 'app_produitDetail')]
+    public function produitDetails(Produit $produit): Response
+    {
+        return $this->render('catalogue/produitDetail.html.twig', [
+            'produit' => $produit
+        ]);
+    }
 
 
 

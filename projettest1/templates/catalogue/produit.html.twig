@@ -33,7 +33,7 @@
                         <li class="list-group-item">{{produit.prix|format_currency('EUR', locale='fr' )}}</li>
                     </ul>
                     <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
+                        <a href="{{path("app_produitDetail",{produit: produit.id})}}" class="card-link">Card link</a>
                         <a href="#" class="card-link">Another link</a>
                     </div>
                 </div>

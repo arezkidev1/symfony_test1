@@ -46,7 +46,6 @@ class Jeu1 extends Fixture
 
 
 
-
         for ($i = 0; $i < 20; $i++) {
             $produit = new Produit();
             $produit->setName("Guitares" . $i)
@@ -93,7 +92,7 @@ class Jeu1 extends Fixture
 
         for ($i = 0; $i < 20; $i++) {
             $produit = new Produit();
-            $produit->setName("Guitares" . $i)
+            $produit->setName("Pianos" . $i)
                 ->setDescription("joli piano")
                 ->setPrix(mt_rand(10, 250))
                 ->setCategorie($c2sc1);
@@ -102,7 +101,7 @@ class Jeu1 extends Fixture
 
 
         $p4 = new Produit();
-        $p4->setName("Clavier");
+        $p4->setName("Claviers");
         $p4->setDescription("joli clavier");
         $p4->setPrix(444);
         $p4->setCategorie($c2sc2);
@@ -110,7 +109,7 @@ class Jeu1 extends Fixture
 
         for ($i = 0; $i < 20; $i++) {
             $produit = new Produit();
-            $produit->setName("Guitares" . $i)
+            $produit->setName("Claviers" . $i)
                 ->setDescription("joli clavier")
                 ->setPrix(mt_rand(10, 250))
                 ->setCategorie($c2sc2);
