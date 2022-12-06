@@ -132,4 +132,5 @@ class Jeu1 extends Fixture
 
         $manager->flush();
     }
+
 }
