@@ -31,6 +31,18 @@ class CatalogueController extends AbstractController
         ]);
     }
 
+    #[Route('/souscategorie', name: 'app_souscat')]
+    public function souscat(CategorieRepository $repo ): Response
+    {
+        return $this->render('catalogue/souscategorie.html.twig', [
+            'categories' => $repo->findBy([
+                "parentCategorie" => !null
+            ])
+        ]);
+    }
+    
+
+
     #[Route('/produit/{categorie}', name: 'app_produit')]
     public function produit(Categorie $categorie): Response
     {
