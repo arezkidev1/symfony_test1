@@ -2,18 +2,38 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Categorie;
+use App\Entity\User;
 use App\Entity\Produit;
-use Doctrine\Bundle\FixturesBundle\Fixture;
+use App\Entity\Categorie;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class Jeu1 extends Fixture
 {
+
+    private $hasher;
+
+    public function __construct(UserPasswordHasherInterface $h) {
+        $this->hasher = $h;
+    }
+
     public function load(ObjectManager $manager): void
     {
         // $product = new Product();
         // $manager->persist($product);
+        
+        $u1 = new User();
+        $u1->setEmail("toto@gmail.com");
+        $u1->setRoles(["ROLE_USER"]);
+        $u1->setPassword($this->hasher->hashPassword($u1, "toto"));
+        $manager->persist($u1);
 
+        $u2 = new User();
+        $u2->setEmail("admin@gmail.com");
+        $u2->setRoles(["ROLE_ADMIN"]);
+        $u2->setPassword($this->hasher->hashPassword($u2, "admin"));
+        $manager->persist($u2);
 
         $c1 = new Categorie();
         $c1->setName("Guitares");
