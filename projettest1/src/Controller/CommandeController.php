@@ -24,4 +24,20 @@ class CommandeController extends AbstractController
         ]);
     }
 
+    #[Route('/checkout', name: 'checkout')]
+    public function checkout(): Response
+    {
+        $user = $this->getUser();
+
+        if ($user == null  ){
+            return $this->redirectToRoute('app_login');
+        }
+
+        return $this->render('commande/commande.html.twig', [
+            'controller_name' => 'CommandeController',
+        ]);
+    }
+
+
+
 }

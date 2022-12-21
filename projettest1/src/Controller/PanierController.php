@@ -2,11 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\DetailPanier;
 use Doctrine\ORM\EntityManager;
 use App\Repository\ProduitRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Repository\DetailPanierRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -28,7 +26,7 @@ class PanierController extends AbstractController
     }
 
    #[Route('/add_panier/{id}', name: 'app_add_panier')]
-    public function addDetail(SessionInterface $session, DetailPanierRepository $detailPanierRepository, ProduitRepository $produit_repo,  EntityManagerInterface $entityManager, int $id): Response
+    public function addDetail(SessionInterface $session, ProduitRepository $produit_repo,  EntityManagerInterface $entityManager, int $id): Response
     {
         $produit = $produit_repo->find($id);
 
@@ -63,7 +61,7 @@ class PanierController extends AbstractController
 
 
     #[Route('/add_panier2/{id}', name: 'app_add_panier2')]
-    public function addDetail2(SessionInterface $session, DetailPanierRepository $detailPanierRepository, ProduitRepository $produit_repo,  EntityManagerInterface $entityManager, int $id): Response
+    public function addDetail2(SessionInterface $session, ProduitRepository $produit_repo,  EntityManagerInterface $entityManager, int $id): Response
     {
         $produit = $produit_repo->find($id);
 
@@ -101,7 +99,7 @@ class PanierController extends AbstractController
     } 
 
     #[Route('/sub/{id}', name: 'app_sub')]
-    public function sub(SessionInterface $session,ProduitRepository $repo, $id): Response
+    public function sub(SessionInterface $session, ProduitRepository $repo, $id): Response
     {
 
         $tab=$session->get("panier2",[]);
