@@ -1,205 +1,176 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CommandeController!{% endblock %}
+{% block title %}Hello CommandeController!
+{% endblock %}
 
 {% block body %}
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12 col-md-9 text-center">
-            <h1 class="title">Bon de commande</h1>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-9 text-center">
+				<h1 class="title">Bon de commande</h1>
+			</div>
+		</div>
 
-    <div class="row">
-        <div class="col-lg-12 col-md-12 text-center">
-            <h2>veuillez remplir les champs ci-dessous</h2>
-            <p>Lorem ipsum dolor amet Lorem ipsum dolor amet Lorem ipsum dolor amet </p>
+		<div class="row">
+			<div class="col-lg-12 col-md-12 text-center">
+				<h2>veuillez remplir les champs ci-dessous</h2>
+				<p>Lorem ipsum dolor amet Lorem ipsum dolor amet Lorem ipsum dolor amet
+				</p>
 
-        </div>
-    </div>
+			</div>
+		</div>
 
-    <form class="form-horizontal" role="form">
-        <div class='container'>
+		<form class="form-horizontal" role="form">
+			<div class='container'>
 
-            <div class='row'>
-                <div class="col-lg-12">
-                    <div class="form-heading">
-                        <span class="prg">Your Information contact</span>
-                    </div>
-                </div>
-            </div>
-            <div class='row'>
+				<div class='row'>
+					<div class="col-lg-12">
+						<div class="form-heading">
+							<span class="prg">Your Information contact</span>
+						</div>
+					</div>
+				</div>
+				<div
+					class='row'>
 
-                <div class="col-lg-6">
-                    <!--<form class="form-horizontal" role="form">-->
-                    <div class="form-group">
-                        <label for="civilite" class="col-sm-2 control-label">Civilité :</label>
-                            <div class="col-sm-8">
-                                <select class="form-control">
-                                    <option>Mr/Mme/Melle/Ng</option>
-                                    <option>Monsieur</option>
-                                    <option>Madame</option>
-                                    <option>Mademoiselle</option>
-                                    <option>Ng</option>
-                                </select>
-                            </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="nom" class="col-sm-2 control-label">Nom :</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="name" id="name" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="prenom" class="col-sm-2 control-label">Prenom :</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="prenom" id="prenom" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="mail" class="col-sm-2 control-label">Email :</label>
-                        <div class="col-sm-8">
-                            <input type="email" class="form-control" name="email" id="email" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="tel" class="col-sm-2 control-label">T&eacute;l&eacute;phone :</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="tel" id="tel" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="mobile" class="col-sm-2 control-label">Mobile :</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="mobile" id="mobile" required>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="societe" class="col-sm-2 control-label">Soci&eacute;t&eacute;</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="societe" id="societe" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
+					<!--<form class="form-horizontal" role="form">-->
 
-                        <label for="adresse" class="col-sm-2 control-label">Adresse</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="adresse" id="adresse" required>
-                        </div>
-                    </div>
+					<div class='col-12'>
+						<div class="row">
+							<div class="form-group col-4">
+								<label for="civilite" class="col-sm-2 control-label">Civilité :</label>
+								<div>
+									<select class="form-control">
+										<option>Mr/Mme/Melle/Ng</option>
+										<option>Monsieur</option>
+										<option>Madame</option>
+										<option>Mademoiselle</option>
+										<option>Ng</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group col-4">
+								<label for="nom" class="col-sm-2 control-label">Nom :</label>
+								<div>
+									<input type="text" class="form-control" name="name" placeholder="Votre nom" id="name" required>
+								</div>
+							</div>
+							<div class="form-group col-4">
+								<label for="prenom" class="col-sm-2 control-label">Prenom :</label>
+								<div>
+									<input type="text" class="form-control" name="prenom" placeholder="Votre prénom" id="prenom" required>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="mail" class="col-sm-2 control-label">Email :</label>
+						<div class="col-sm-12">
+							<input type="email" class="form-control" name="email" placeholder="Veuillez saisir votre Email" id="email" required>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="row">
+							<div class="form-group col-6">
+								<label for="tel" class="col-sm-2 control-label">T&eacute;l&eacute;phone :</label>
+								<div>
+									<input type="text" class="form-control" name="tel" placeholder="Votre numéro de téléphone" id="tel" required>
+								</div>
+							</div>
+							<div class="form-group col-6">
+								<label for="mobile" class="col-sm-2 control-label">Mobile :</label>
+								<div>
+									<input type="text" class="form-control" name="mobile" placeholder="Votre numéro de mobile" id="mobile" required>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                    <div class="form-group">
-                        <label for="cp" class="col-sm-2 control-label">Code Postal</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="cp" id="cp">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="ville" class="col-sm-2 control-label">Ville</label>
-                        <div class="col-sm-8">
-                            <input type="text" name="ville" class="form-control" id="ville">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="pays" class="col-sm-2 control-label">Pays</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="pays" id="pays">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="checkbox inline">
-                            <label>
-                                <input type="checkbox" value="" checked>
-                                <span class="cc"><i class="cc-icon glyphicon glyphicon-ok"></i></span> Option1
-                            </label>
-                        </div>
+					<div class="col-12">
+						Adresse de livraison:
+					</div>
 
-                        <div class="checkbox inline">
-                            <label>
-                                <input type="checkbox" value="" checked>
-                                <span class="cc"><i class="cc-icon glyphicon glyphicon-ok"></i></span> Option 2
-                            </label>
-                        </div>
-                        <div class="checkbox inline">
-                            <label>
-                                <input type="checkbox" value="" checked>
-                                <span class="cc"><i class="cc-icon glyphicon glyphicon-ok"></i></span> Option 3
-                            </label>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
+					<div class="col-12 col-lg-2">
+						<input class="form-control" type="text" name="delivery-number" placeholder="Numero de voie" required>
+					</div>
+					<div class="col-12 col-lg-3">
+						<input class="form-control" type="text" name="delivery-street" placeholder="Rue, Allée, Avenue..." required>
+					</div>
+					<div class="col-12 col-lg-2">
+						<input class="form-control" type="text" name="delivery-zipcode" placeholder="Code postal" required>
+					</div>
+					<div class="col-12 col-lg-3">
+						<input class="form-control" type="text" name="delivery-city" placeholder="Ville" required>
+					</div>
+					<div class="col-12 col-lg-2 mb-3">
+						<input class="form-control" type="text" name="delivery-country" placeholder="Pays" required>
+					</div>
 
-                    <div class="form-heading">
+					<div class="col-12">
+						Adresse de facturation:
+					</div>
 
-                        <span class="prg">Event</span>
-                    </div>
 
-                    <div>
+					<div class="col-12 col-lg-2">
+						<input class="form-control" type="text" name="billing-number" placeholder="Numero de voie" required>
+					</div>
+					<div class="col-12 col-lg-3">
+						<input class="form-control" type="text" name="billing-street" placeholder="Rue, Allée, Avenue..." required>
+					</div>
+					<div class="col-12 col-lg-2">
+						<input class="form-control" type="text" name="billing-zipcode" placeholder="Code postal" required>
+					</div>
+					<div class="col-12 col-lg-3">
+						<input class="form-control" type="text" name="billing-city" placeholder="Ville" required>
+					</div>
+					<div class="col-12 col-lg-2 mb-3">
+						<input class="form-control" type="text" name="billing-country" placeholder="Pays" required>
+					</div>
 
-                        <div class="form-group">
-                            <label for="programme" class="col-sm-2 control-label">Program</label>
-                            <div class="col-sm-8">
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="origine" class="col-sm-2 control-label">Origin</label>
-                            <div class="col-sm-8">
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </div>
-                        <!--</form>-->
+					<div class="col-12">
+						<label for="payment">Moyen de paiement</label>
+						<select class="form-control" name="payment" id="payment">
+							<option value="" selected>Selectionner un moyen de paiement</option>
+							<option value="card">Carte bleue</option>
+						</select>
+					</div>
+					<div class="col-12">
+						<label for="card-owner">Titulaire de la carte</label>
+						<input id="card-owner" name="cardOwner" type="text" class="form-control" value="aaa aaa" placeholder="John Doe" required>
+					</div>
 
-                    </div>
+					<div class="col-6">
+						<label for="card-number">Numero de carte:</label>
+						<input id="card-number" name="cardNumber" type="text" class="form-control" required>
+					</div>
+					<div class="col-3">
+						<label for="card-cvv">Code CVV:</label>
+						<input id="card-cvv" name="cardCvv" type="text" class="form-control" minlength="3" maxlength="3" pattern="\d{3}" required>
+					</div>
+					<div class="col-3">
+						<label for="card-date">Date d'expiration:</label>
+						<input id="card-date" name="cardDate" type="month" class="form-control" required>
+					</div>
 
-                </div>
+					<div class="col-4 mt-2 text-center">
+						<button type="button" class="btn btn-success">Valider la commande</button>
+					</div>
+					<div class="col-4 mt-2 text-center">
+						<button type="button" class="btn btn-warning">Modifier la commande</button>
+					</div>
+					<div class="col-4 mt-2 text-center">
+						<button type="button" class="btn btn-danger">Annuler la commande</button>
+					</div>
+				</div>
 
-                <div class="col-lg-6">
+			</div>
 
-                    <div class="form-heading">
 
-                        <span class="prg">Your choice</span>
-                    </div>
-
-                    
-
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="comment">Your Comment:</label>
-                        <textarea class="form-control" rows="5" id="comment"></textarea>
-                    </div>
-                </div>
-
-                <div class="col-xs-12">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-
-            </div>
-        </div>
-    </form>
-
-</div>
-
+		</div>
+	</div>
 
 {% endblock %}
