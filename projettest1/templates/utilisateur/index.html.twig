@@ -4,153 +4,124 @@
 {% endblock %}
 
 {% block body %}
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
-
+	
 	<div class="container">
-		<div class="example-wrapper">
-			<h1>Hello
-				{{ controller_name }}! ✅</h1>
-
-			This friendly message is coming from:
-			<ul>
-				<li>Your controller at
-					<code>
-						<a href="{{ '/home/arezlam/Bureau/symfony/projettest1/src/Controller/UtilisateurController.php'|file_link(0) }}">src/Controller/UtilisateurController.php</a>
-					</code>
-				</li>
-				<li>Your template at
-					<code>
-						<a href="{{ '/home/arezlam/Bureau/symfony/projettest1/templates/utilisateur/index.html.twig'|file_link(0) }}">templates/utilisateur/index.html.twig</a>
-					</code>
-				</li>
-			</ul>
+		<div class="row">
+			<div class="col-lg-12 col-md-9 text-center">
+				<h1 class="title">Inscription</h1>
+			</div>
 		</div>
 
-		<form class="row g-3 was-validated">
-			<div class="col-md-4">
-				<label for="validationServer01" class="form-label">First name</label>
-				<input type="text" class="form-control" id="validationServer01" value="Mark" required>
-				<div class="valid-feedback">
-					Looks good!
+		<div class="row">
+			<div class="col-lg-12 col-md-12 text-center">
+				<h2>veuillez remplir les champs ci-dessous</h2>
+				<p>Lorem ipsum dolor amet Lorem ipsum dolor amet Lorem ipsum dolor amet
+				</p>
+
+			</div>
+		</div>
+
+		<form class="form-horizontal" role="form">
+			<div class='container'>
+
+				<div class='row'>
+					<div class="col-lg-12">
+						<div class="form-heading">
+							<span class="prg">Your Information contact</span>
+						</div>
+					</div>
 				</div>
-				<div class='invalid-feedback'>
-					Not good
+				<div
+					class='row'>
+
+
+					<!--<form class="form-horizontal" role="form">-->
+
+					<div class='col-12'>
+						<div class="row">
+							<div class="form-group col-4">
+								<label for="civilite" class="col-sm-2 control-label">Civilité :</label>
+								<div>
+									<select class="form-control">
+										<option>Mr/Mme/Melle/Ng</option>
+										<option>Monsieur</option>
+										<option>Madame</option>
+										<option>Mademoiselle</option>
+										<option>Ng</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group col-4">
+								<label for="nom" class="col-sm-2 control-label">Nom :</label>
+								<div>
+									<input type="text" class="form-control" name="name" placeholder="Votre nom" id="name" required>
+								</div>
+							</div>
+							<div class="form-group col-4">
+								<label for="prenom" class="col-sm-2 control-label">Prenom :</label>
+								<div>
+									<input type="text" class="form-control" name="prenom" placeholder="Votre prénom" id="prenom" required>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="mail" class="col-sm-2 control-label">Email :</label>
+						<div class="col-sm-12">
+							<input type="email" class="form-control" name="email" placeholder="Veuillez saisir votre Email" id="email" required>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="row">
+							<div class="form-group col-6">
+								<label for="tel" class="col-sm-2 control-label">T&eacute;l&eacute;phone :</label>
+								<div>
+									<input type="text" class="form-control" name="tel" placeholder="Votre numéro de téléphone" id="tel" required>
+								</div>
+							</div>
+							<div class="form-group col-6">
+								<label for="mobile" class="col-sm-2 control-label">Mobile :</label>
+								<div>
+									<input type="text" class="form-control" name="mobile" placeholder="Votre numéro de mobile" id="mobile" required>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12">
+						Adresse de livraison:
+					</div>
+
+
+					<div class="col-12 col-lg-2">
+						<input class="form-control" type="text" name="delivery-number" placeholder="Numero de voie" required>
+					</div>
+					<div class="col-12 col-lg-3">
+						<input class="form-control" type="text" name="delivery-street" placeholder="Rue, Allée, Avenue..." required>
+					</div>
+					<div class="col-12 col-lg-2">
+						<input class="form-control" type="text" name="delivery-zipcode" placeholder="Code postal" required>
+					</div>
+					<div class="col-12 col-lg-3">
+						<input class="form-control" type="text" name="delivery-city" placeholder="Ville" required>
+					</div>
+					<div class="col-12 col-lg-2 mb-3">
+						<input class="form-control" type="text" name="delivery-country" placeholder="Pays" required>
+					</div>
+
+					
+
+					<div class="col-12 mt-2 text-center">
+						<button type="button" class="btn btn-success">Validation/connexion</button>
+					</div>
+					
 				</div>
 
 			</div>
-			<div class="col-md-4">
-				<label for="validationServer02" class="form-label">Last name</label>
-				<input type="text" class="form-control " id="validationServer02" value="Otto" required>
-				<div class="valid-feedback">
-					Looks good!
-				</div>
-				<div class='invalid-feedback'>
-					Not good
-				</div>
-			</div>
-			<div class="col-md-4">
-				<label for="validationServerUsername" class="form-label">Username</label>
-				<div class="input-group has-validation">
-					<span class="input-group-text" id="inputGroupPrepend3">@</span>
-					<input type="text" class="form-control " id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
-					<div class="valid-feedback">
-						Looks good!
-					</div>
-					<div class='invalid-feedback'>
-						Not good
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<label for="validationServer03" class="form-label">City</label>
-				<input type="text" class="form-control " id="validationServer03" aria-describedby="validationServer03Feedback" required>
-				<div id="validationServer03Feedback" class="invalid-feedback">
-					Please provide a valid city.
-				</div>
-				<div id="validationServer03Feedback" class="valid-feedback">
-					valid city.
-				</div>
-			</div>
-			<div class="col-md-3">
-				<label for="validationServer04" class="form-label">State</label>
-				<select class="form-select " id="validationServer04" aria-describedby="validationServer04Feedback" required>
-					<option selected disabled value="">Choose...</option>
-					<option>...</option>
-				</select>
-				<div id="validationServer04Feedback" class="invalid-feedback">
-					Please select a valid state.
-				</div>
-				<div id="validationServer04Feedback" class="valid-feedback">
-					valid state.
-				</div>
-			</div>
-			<div class="col-md-3">
-				<label for="validationServer05" class="form-label">Zip</label>
-				<input type="text" class="form-control " id="validationServer05" aria-describedby="validationServer05Feedback" required>
-				<div id="validationServer05Feedback" class="invalid-feedback">
-					Please provide a valid zip.
-				</div>
-				<div id="validationServer05Feedback" class="valid-feedback">
-					valid zip.
-				</div>
-			</div>
-			<div class="col-12">
-				<div class="form-check">
-					<input class="form-check-input " type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
-					<label class="form-check-label" for="invalidCheck3">
-						Agree to terms and conditions
-					</label>
-					<div id="invalidCheck3Feedback" class="invalid-feedback">
-						You must agree before submitting.
-					</div>
-					<div id="invalidCheck3Feedback" class="valid-feedback">
-						must agree.
-					</div>
-				</div>
-			</div>
-			<div class="col-12">
-				<button class="btn btn-primary" type="submit">Submit form</button>
-			</div>
 
-		</form>
+
+		</div>
 	</div>
 
-	{% block javascipts %}
-
-		<script>
-
-			// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-'use strict'
-
-// Fetch all the forms we want to apply custom Bootstrap validation styles to
-var forms = document.querySelectorAll('.needs-validation')
-
-// Loop over them and prevent submission
-Array.prototype.slice.call(forms).forEach(function (form) {
-form.addEventListener('submit', function (event) {
-if (! form.checkValidity()) {
-event.preventDefault()
-event.stopPropagation()
-}
-
-form.classList.add('was-validated')
-}, false)
-})
-})()
-		</script>
-
-	{% endblock %}
 
 {% endblock %}
