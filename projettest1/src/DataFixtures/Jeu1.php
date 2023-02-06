@@ -26,7 +26,7 @@ class Jeu1 extends Fixture
         $u1 = new User();
         $u1->setEmail("toto@gmail.com");
         $u1->setRoles(["ROLE_USER"]);
-        $u1->setPassword($this->hasher->hashPassword($u1, "toto"));
+        $u1->setPassword($this->hasher->hashPassword($u1, "tototo"));
         $manager->persist($u1);
 
         $u2 = new User();

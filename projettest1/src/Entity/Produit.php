@@ -50,6 +50,10 @@ class Produit
     ])]
     private ?Categorie $categorie = null;
 
+    #[ORM\OneToOne(mappedBy: 'Produit', cascade: ['persist', 'remove'])]
+    private ?DetailsCommande $detailsCommande = null;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -99,6 +103,28 @@ class Produit
     public function setCategorie(?Categorie $categorie): self
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getDetailsCommande(): ?DetailsCommande
+    {
+        return $this->detailsCommande;
+    }
+
+    public function setDetailsCommande(?DetailsCommande $detailsCommande): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($detailsCommande === null && $this->detailsCommande !== null) {
+            $this->detailsCommande->setProduit(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($detailsCommande !== null && $detailsCommande->getProduit() !== $this) {
+            $detailsCommande->setProduit($this);
+        }
+
+        $this->detailsCommande = $detailsCommande;
 
         return $this;
     }
