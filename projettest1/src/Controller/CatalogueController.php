@@ -59,6 +59,16 @@ class CatalogueController extends AbstractController
         ]);
     }
 
+    
+    #[Route('/produits', name: 'app_produits')]
+    public function produits(ProduitRepository $produitRepository): Response
+    {
+        return $this->render('catalogue/produit.html.twig', [
+            'produits' => $produitRepository->findAll()
+        ]);
+    }
+
+
 
 
 

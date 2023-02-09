@@ -12,60 +12,24 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PanierController extends AbstractController
 {
-
-    
     #[Route('/panier', name: 'app_panier')]
-    public function index(SessionInterface $session): Response
-    {
-        
-
-
-        return $this->render('panier/index.html.twig', [
-            "panier" => $session->get("panier", [])
-        ]);
-    }
-
-   #[Route('/add_panier/{id}', name: 'app_add_panier')]
-    public function addDetail(SessionInterface $session, ProduitRepository $produit_repo,  EntityManagerInterface $entityManager, int $id): Response
-    {
-        $produit = $produit_repo->find($id);
-
-        $tab = $session->get("panier", []);
-
-        $tab[] = $produit;
-
-        $session->set("panier", $tab);
-
-        // dd($detail);
-        // $quantite = $detail->getQuantite();
-        // $quant = $detail->setQuantite($quantite + 1);
-
-        // $entityManager->persist($detailPanier);
-        // $entityManager->flush($detailPanier);
-
-        return $this->redirect('/panier');
-;
-
-    } 
-
-    #[Route('/panier2', name: 'app_panier2')]
     public function panier2(SessionInterface $session): Response
     {
         
 
 
-        return $this->render('panier/panier2.html.twig', [
-            "panier" => $session->get("panier2", [])
+        return $this->render('panier/panier.html.twig', [
+            "panier" => $session->get("panier", [])
         ]);
     }
 
 
-    #[Route('/add_panier2/{id}', name: 'app_add_panier2')]
-    public function addDetail2(SessionInterface $session, ProduitRepository $produit_repo,  EntityManagerInterface $entityManager, int $id): Response
+    #[Route('/add_panier/{id}', name: 'app_add_panier')]
+    public function addDetail2(SessionInterface $session, ProduitRepository $produit_repo, int $id): Response
     {
         $produit = $produit_repo->find($id);
 
-        $tab = $session->get("panier2", []);
+        $tab = $session->get("panier", []);
 
         $p = null;
         foreach ($tab as $produit) {
@@ -84,7 +48,7 @@ class PanierController extends AbstractController
             $p->quantite++;
         }
 
-        $session->set("panier2", $tab);
+        $session->set("panier", $tab);
 
         // dd($detail);
         // $quantite = $detail->getQuantite();
@@ -93,7 +57,7 @@ class PanierController extends AbstractController
         // $entityManager->persist($detailPanier);
         // $entityManager->flush($detailPanier);
 
-        return $this->redirect('/panier2');
+        return $this->redirectToRoute('app_panier');
 ;
 
     } 
@@ -102,7 +66,7 @@ class PanierController extends AbstractController
     public function sub(SessionInterface $session, ProduitRepository $repo, $id): Response
     {
 
-        $tab=$session->get("panier2",[]);
+        $tab=$session->get("panier",[]);
         
         $p = null;
         foreach ($tab as $produit) {
@@ -125,11 +89,11 @@ class PanierController extends AbstractController
 
 
 
-        $session->set("panier2", $tab);
+        $session->set("panier", $tab);
 
 //         dd($tab);
 
-        return $this->redirect("/panier2");
+        return $this->redirectToRoute("app_panier");
 
     }
 

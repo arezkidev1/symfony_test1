@@ -25,6 +25,9 @@ class Jeu1 extends Fixture
         
         $u1 = new User();
         $u1->setEmail("toto@gmail.com");
+        $u1->setNom("toto");
+        $u1->setPrenom("tutu");
+        $u1->setTelephone("1234567890");
         $u1->setRoles(["ROLE_USER"]);
         $u1->setPassword($this->hasher->hashPassword($u1, "tototo"));
         $manager->persist($u1);
@@ -36,21 +39,25 @@ class Jeu1 extends Fixture
         $manager->persist($u2);
 
         $c1 = new Categorie();
+        $c1->setImage("acoustique_1.jpg");
         $c1->setName("Guitares");
         $manager->persist($c1);
 
         $c2 = new Categorie();
+        $c2->setImage("piano_1.jpg");
         $c2->setName("Claviers");
         $manager->persist($c2);
 
 
         $c1sc1 = new Categorie();
         $c1sc1->setName("Guitare Acoustique");
+        $c1sc1->setImage("acoustique_1.jpg");
         $c1sc1->setParentCategorie($c1);
         $manager->persist($c1sc1);
 
         $c1sc2 = new Categorie();
         $c1sc2->setName("Guitare Electrique");
+        $c1sc2->setImage("electrique_1.jpg");
         $c1sc2->setParentCategorie($c1);
         $manager->persist($c1sc2);
 

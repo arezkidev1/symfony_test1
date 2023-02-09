@@ -16,7 +16,7 @@
 									{{ panier|length }}
 									items</h5>
 							{% else %}
-								<h5 class="mb-0">Empty cart</h5>
+								<h5 class="mb-0">Panier vide</h5>
 							{% endif %}
 						</div>
 						<div
@@ -70,7 +70,7 @@
 												{{ item.quantite }}
 											</div>
 
-											<a href="/add_panier2/{{item.id}}" class="btn btn-primary">
+											<a href="/add_panier/{{item.id}}" class="btn btn-primary">
 												+
 											</a>
 										</div>
@@ -99,15 +99,15 @@
 						<div class="card mb-4">
 							<div class="card-body">
 								<p>
-									<strong>Expected shipping delivery</strong>
+									<strong>date de livraison</strong>
 								</p>
-								<p class="mb-0">12.10.2020 - 14.10.2020</p>
+								<p class="mb-0">{{ "now"|date_modify("+2 day")|date("d.m.Y") }} - {{ "now"|date_modify("+5 day")|date("d.m.Y") }}</p>
 							</div>
 						</div>
 						<div class="card mb-4 mb-lg-0">
 							<div class="card-body">
 								<p>
-									<strong>We accept</strong>
+									<strong>Nous acceptons</strong>
 								</p>
 								<img class="me-2" width="45px" src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg" alt="Visa"/>
 								<img class="me-2" width="45px" src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg" alt="American Express"/>
@@ -124,12 +124,12 @@
 				<div class="col-md-4">
 					<div class="card mb-4">
 						<div class="card-header py-3">
-							<h5 class="mb-0">Summary</h5>
+							<h5 class="mb-0">Récapitulatif</h5>
 						</div>
 						<div class="card-body">
 							<ul class="list-group list-group-flush">
 								<li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-									Total Products
+									Total (HT)
 									<span>{% set total = 0 %}
 										{% for item in panier %}
 											{% set subtotal = item.prix * item.quantite %}
@@ -138,7 +138,7 @@
 										{{total|format_currency('EUR', locale='fr')}}</span>
 								</li>
 								<li class="list-group-item d-flex justify-content-between align-items-center px-0">
-									VAT 20%
+									TVA 20%
 									<span>
 										{% set total = 0 %}
 										{% set TVA = 0 %}
@@ -151,15 +151,15 @@
 									</span>
 								</li>
 								<li class="list-group-item d-flex justify-content-between align-items-center px-0">
-									Shipping
+									Frais de port
 									<span>Gratis</span>
 								</li>
 								<li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
 									<div>
-										<strong>Total amount
+										<strong>Montant total
 										</strong>
 										<strong>
-											<p class="mb-0">(including VAT)</p>
+											<p class="mb-0">(TVA comprise)</p>
 										</strong>
 									</div>
 									<span>
@@ -179,7 +179,7 @@
 							</ul>
 
 							<a href="{{path('checkout')}}" class="btn btn-primary btn-lg btn-block">
-								Go to checkout
+								Commander
 							</a>
 						</div>
 					</div>

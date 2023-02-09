@@ -1,23 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello souscatégorie{% endblock %}
+{% block title %}Souscatégorie
+{% endblock %}
 
 {% block body %}
 
- <div class="container">
-        <div class="row">
-                {% for categorie in categories %}
-                {% if (categorie.produits)|length != null %}
-                    <div class="col-4">
-                    <a href="{{path('app_produit', {categorie : categorie.id }) }}">
-                        <img class="img-fluid" src="https://picsum.photos/300/200" >
-                        <div class="text-center">
-                        {{ categorie.name}}
-                        </div>
-                    </a>
-                    </div>
-                    {% endif %}
-                {% endfor %}
-        </div>
-    </div>
+	<div class="container">
+		<div class="row mt-5">
+			{% for categorie in categories %}
+				{% if (categorie.produits)|length != null %}
+					<div class="col-md-6">
+						<a
+							href="{{path('app_produit', {categorie : categorie.id }) }}">
+							{# <img class="img-fluid" src="https://picsum.photos/300/200" > #}
+
+							<img class="card-category-image" src="/images/{{ categorie.image }}">
+
+
+							<div class="text-center">
+								<h2>{{ categorie.name}}</h2>
+							</div>
+						</a>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
 {% endblock %}
